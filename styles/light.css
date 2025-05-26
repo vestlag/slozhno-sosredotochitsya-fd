@@ -9,6 +9,22 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --accent-color: rgba(255, 141, 203, 1);
+  --bg-color: rgba(255, 241, 247, 1);
+  --text-color: rgba(53, 52, 48, 1);
+  --accent-color-text: rgba(53, 52, 48, 1);
+  --title-color: rgba(255, 194, 230, 1);
+  --title-decor-bg: rgba(255, 141, 203, 1);
+  --decor-color: #353430;
+  --bg-image: url("../images/cover-image-light.png");
+  --subheading-color: rgba(53, 52, 48, 1);
+  --button-hover-color: rgba(50, 49, 45, 0.4);
+  --button-focus-color: rgba(53, 52, 48, 1);
+}
+
+.theme-light .header__decorative,
+.theme-light .header__decorative::after {
+  display: none !important;
 }
 
 .theme-light .page {

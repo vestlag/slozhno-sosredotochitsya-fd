@@ -16,9 +16,3 @@
   --button-hover-color: rgba(255, 0, 112, 0.4);
   --button-focus-color: rgba(255, 0, 112, 1);
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-image: url("../images/cover-image-light.png");
-  }
-}

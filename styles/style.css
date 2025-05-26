@@ -4,10 +4,10 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   font-size: 18px;
   line-height: 1.3;
-  margin: 0;
+  margin: 0 auto;
   background-image: var(--bg-image);
   background-position: center;
   background-repeat: no-repeat;
@@ -18,6 +18,8 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  min-height: 668px;
 }
 
 .decorated-zone {
@@ -35,15 +37,15 @@
 .decorated-zone::before {
   border-inline-end: 1px solid var(--decor-color);
   border-block-start: 1px solid var(--decor-color);
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  top: 10px;
+  right: 10px;
 }
 
 .decorated-zone::after {
   border-inline-start: 1px solid var(--decor-color);
   border-block-end: 1px solid var(--decor-color);
-  inset-inline-start: 10px;
-  inset-block-end: 3px;
+  bottom: 10px;
+  left: 10px;
 }
 
 .header__decorative {
@@ -51,7 +53,7 @@
   inset-inline-end: 38px;
   inset-block-start: 10px;
   color: var(--decor-color);
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.3;
@@ -66,8 +68,8 @@
   border-radius: 50%;
   background-color: var(--decor-color);
   box-shadow: 0 0 4px 2px var(--decor-color);
-  margin-inline-start: 10px;
-  margin-block-start: 8px;
+  top: 8px;
+  left: 42px;
 }
 
 .header__theme-menu {
@@ -89,10 +91,11 @@
   padding: 1.5px 13px;
   text-transform: lowercase;
   color: var(--accent-color-text);
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   font-size: 18px;
   font-weight: 400;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -106,7 +109,6 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.83;
   text-shadow: 4px 4px 0 var(--accent-color);
-  margin-block: 65px 52px;
   margin-inline: 10px;
 }
 
@@ -114,7 +116,7 @@
   max-inline-size: 355px;
   align-self: flex-start;
   line-height: 1.3;
-  margin: 0 10px 0 10px;
+  margin: 55px 10px 0 10px;
 }
 
 .title-decor {
@@ -124,11 +126,11 @@
 }
 
 .content__section:first-child {
-  margin-top: 46px;
+  margin-top: 40px;
 }
 
 .content__section {
-  font-family: var(--main-font);
+  font-family: var(--main-font), monospace;
   font-size: 18px;
   line-height: 1.3;
   font-weight: 400;
@@ -149,6 +151,15 @@
 
 .content__article p {
   margin: 0;
+  margin-block: 10px;
+}
+
+.content__article p:first-child {
+  margin-block-start: 0;
+}
+
+.content__article p:last-child {
+  margin-block-end: 0;
 }
 
 .content__title {
@@ -182,7 +193,7 @@
 
 .gallery__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -190,6 +201,7 @@
   position: relative;
   display: grid;
   place-items: center;
+  height: 100vh;
   min-height: 668px;
   margin-top: 40px;
 }
@@ -201,19 +213,15 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.footer.decorated-zone::after {
-  inset-block-end: 11px;
-}
-
 @media (min-width: 768px) {
   .decorated-zone::before {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
+    top: 20px;
+    right: 20px;
   }
 
   .decorated-zone::after {
-    inset-block-end: 16px;
-    inset-inline-start: 20px;
+    bottom: 20px;
+    left: 20px;
   }
 
   .header__decorative {
@@ -227,14 +235,18 @@
   }
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-block: 170px 162px;
     margin-inline: 0;
   }
 
   .header__description {
     justify-self: end;
+    margin-top: 162px;
     margin-inline: 0 20px;
     min-inline-size: 364px;
+  }
+
+  .content__section:first-child {
+    margin-top: 60px;
   }
 
   .content__section {
@@ -242,9 +254,6 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
-  }
-  .content__section:first-child {
-    margin-top: 65px;
   }
 
   .section__title {
@@ -256,24 +265,24 @@
     grid-column: 2;
   }
 
-  .content__section:nth-child(2) {
+  .concentration-section {
     display: block;
     max-inline-size: 100%;
   }
 
-  .content__section:nth-child(2) .section__title {
+  .concentration-section .section__title {
     max-inline-size: 236px;
   }
 
-  .content__section:nth-child(2) .content__article {
+  .concentration-section .content__article {
     margin: 20px 0;
   }
 
-  .content__section:nth-child(3) .content__title {
+  .advice-section .content__title {
     margin-bottom: 20px;
   }
 
-  .content__section:nth-child(3) .content__article {
+  .advice-section .content__article {
     grid-column: 2;
     margin-top: 0;
     margin-bottom: 0;
@@ -293,9 +302,6 @@
   }
 
   .gallery__grid {
-    width: 728px;
-    height: 780px;
-    display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
     gap: 20px;
@@ -304,50 +310,30 @@
   .gallery__image:first-child {
     grid-column: 1 / 3;
     grid-row: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .gallery__image:nth-child(2) {
     grid-column: 3;
     grid-row: 1 / 3;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .gallery__image:nth-child(3) {
     grid-column: 1;
     grid-row: 2 / 4;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .gallery__image:nth-child(4) {
     grid-column: 2;
     grid-row: 2;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .gallery__image:nth-child(5) {
     grid-column: 2 / 4;
     grid-row: 3;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .footer {
     margin-top: 60px;
-    min-height: 1024px;
-  }
-
-  .footer.decorated-zone::after {
-    inset-block-end: 22px;
   }
 }
 @media (min-width: 1024px) {
@@ -359,26 +345,11 @@
 
   .header__theme-menu-list {
     flex-direction: row;
-    gap: 10px;
-  }
-
-  .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin: 0;
   }
 
   .header__description {
     min-inline-size: 491px;
     margin-top: 114px;
-  }
-
-  .header {
-    min-block-size: 768px;
-  }
-
-  .decorated-zone::after {
-    inset-block-end: 20px;
-    inset-inline-start: 20px;
   }
 
   .content__section:first-child {
@@ -392,32 +363,16 @@
     gap: 20px;
   }
 
-  .content__section:nth-child(2) .section__title {
+  .concentration-section .section__title {
     min-inline-size: 315px;
   }
 
-  .content__section:nth-child(2) .content__article {
+  .concentration-section .content__article {
     margin-block: 20px 0;
   }
 
-  .content__section:nth-child(3) {
+  .advice-section {
     column-gap: 10px;
-  }
-
-  .gallery {
-    min-block-size: 1091px;
-  }
-
-  .gallery__grid {
-    width: 984px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    gap: 20px;
-  }
-
-  .footer {
-    min-block-size: 768px;
   }
 
   .footer__title {

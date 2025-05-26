@@ -10,14 +10,21 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --accent-color: rgba(255, 0, 112, 1);
-  --accent-color-text: rgba(255, 0, 112, 1);
   --bg-color: rgba(0, 0, 40, 1);
   --text-color: rgba(241, 178, 206, 1);
   --title-color: rgba(219, 0, 255, 1);
   --decor-color: rgba(255, 0, 112, 1);
+  --title-decor-bg: var(--accent-color);
+  --main-font: "IBM Plex mono", monospace;
+  --bg-image: url("../images/cover-image-dark.png");
+  --accent-color-text: rgba(255, 0, 112, 1);
   --subheading-color: rgba(0, 0, 40, 1);
   --button-hover-color: rgba(255, 0, 112, 0.4);
   --button-focus-color: rgba(255, 0, 112, 1);
+}
+
+.theme-dark .header__decorative {
+  display: block;
 }
 
 .theme-dark .page {

@@ -8,16 +8,16 @@
   font-size: 18px;
   line-height: 1.3;
   margin: 0;
-}
-
-.header {
-  display: grid;
-  grid-template-rows: 1fr min-content 1fr;
   background-image: var(--bg-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 .decorated-zone {
@@ -42,7 +42,6 @@
 .decorated-zone::after {
   border-inline-start: 1px solid var(--decor-color);
   border-block-end: 1px solid var(--decor-color);
-  inset-block-end: 0;
   inset-inline-start: 10px;
   inset-block-end: 3px;
 }

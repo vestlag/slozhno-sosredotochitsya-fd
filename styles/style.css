@@ -155,6 +155,7 @@
 
 .content__article p {
   margin: 0;
+  margin-block-end: 10px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
@@ -264,7 +265,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
-    gap: 20px;
+    column-gap: 20px;
     align-items: start;
   }
 
@@ -272,6 +273,12 @@
     grid-column: 1;
     grid-row: 1 / span 2;
     align-self: start;
+  }
+
+  .article-merger {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
 
   .advice-section .section__title {
